@@ -118,7 +118,7 @@ async function validateSkill(args: string[]) {
   ['scripts', 'references', 'assets'].forEach(dir => {
     const dirPath = join(skillPath, dir);
     if (existsSync(dirPath)) {
-      const files = (await import('fs')).readdirSync(dirPath).filter(f => f !== '.gitkeep');
+      const files = readdirSync(dirPath).filter(f => f !== '.gitkeep');
       if (files.length === 0) {
         warnings.push(`Diretório ${dir} está vazio (exceto .gitkeep)`);
       }
@@ -325,13 +325,13 @@ function generateScriptExample(name: string): string {
 set -euo pipefail
 
 # Configuração
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_FILE="${SCRIPT_DIR}/../config.json"
-LOG_FILE="${SCRIPT_DIR}/../logs/${name}-$(date +%Y%m%d-%H%M%S).log"
+SCRIPT_DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_FILE="\${SCRIPT_DIR}/../config.json"
+LOG_FILE="\${SCRIPT_DIR}/../logs/${name}-\$(date +%Y%m%d-%H%M%S).log"
 
 # Logging
 log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+    echo "[\$(date '+%Y-%m-%d %H:%M:%S')] \$*" | tee -a "\$LOG_FILE"
 }
 
 # Verificações Obrigatórias
@@ -340,8 +340,8 @@ check_dependencies() {
     
     # Verificar tools necessárias
     for cmd in bun curl jq; do
-        if ! command -v $cmd &> /dev/null; then
-            log "❌ $cmd não instalado"
+        if ! command -v \$cmd &> /dev/null; then
+            log "❌ \$cmd não instalado"
             exit 1
         fi
     done
@@ -352,9 +352,9 @@ check_dependencies() {
 check_paths() {
     log "Verificando paths..."
     
-    [[ -f "$CONFIG_FILE" ]] || { log "❌ Config não encontrado: $CONFIG_FILE"; exit 1; }
+    [[ -f "\$CONFIG_FILE" ]] || { log "❌ Config não encontrado: \$CONFIG_FILE"; exit 1; }
     
-    mkdir -p "$(dirname "$LOG_FILE")"
+    mkdir -p "\$(dirname "\$LOG_FILE")"
     
     log "✅ Paths OK"
 }
@@ -371,7 +371,7 @@ check_gpu() {
 
 # Função principal
 main() {
-    local input="${1:-}"
+    local input="\${1:-}"
     
     check_dependencies
     check_paths
@@ -379,20 +379,20 @@ main() {
     
     log "🚀 Iniciando ${name}"
     
-    if [[ -z "$input" ]]; then
+    if [[ -z "\$input" ]]; then
         log "❌ Input obrigatório"
-        echo "Uso: $0 <input>"
+        echo "Uso: \$0 <input>"
         exit 1
     fi
     
     # TODO: Implementar lógica da skill
     
     log "✅ ${name} concluído"
-    echo "Resultado em: $LOG_FILE"
+    echo "Resultado em: \$LOG_FILE"
 }
 
 # Executar
-main "$@"
+main "\$@"
 `;
 }
 
@@ -409,48 +409,38 @@ function generateReferenceExample(name: string): string {
 [Descrição da funcionalidade 1]
 
 **Exemplo:**
-\`\`\`bash
+\\\`\\\`\\\`bash
 bun run scripts/${name}.sh --feature1 "valor"
-\`\`\`
+\\\`\\\`\\\`
 
 ### Feature 2
 [Descrição da funcionalidade 2]
 
 **Exemplo:**
-\`\`\`bash
+\\\`\\\`\\\`bash
 bun run scripts/${name}.sh --feature2 "valor"
+\\\`\\\`\\\`
+
+## Verificações
+
+\`\`\`bash
+# Testar dependências
+which bun curl jq || echo "Dependências faltando"
+
+# Verificar configuração
+[[ -f config.json ]] && echo "Config OK" || echo "Config ausente"
 \`\`\`
 
 ## Integração com DevSan
 
-### Mem0
-[Como usar memória persistente]
+Esta skill deve ser chamada quando:
+- Usuário enviar link YouTube
+- Pedir transcrição ou download
+- Solicitar corte inteligente
 
-### Tavily/Exa
-[Como usar busca web]
+## Logs
 
-### Telegram/WhatsApp
-[Como enviar resultados]
-
-## Exemplos Avançados
-
-\`\`\`bash
-# Exemplo 1
-bun run scripts/${name}.sh --advanced --param1 valor1 --param2 valor2
-
-# Exemplo 2
-cat input.json | bun run scripts/${name}.sh --stdin
-\`\`\`
-
-## Troubleshooting
-
-### Problema Comum 1
-**Sintoma:** [O que acontece]
-**Solução:** [Como resolver]
-
-### Problema Comum 2
-**Sintoma:** [O que acontece]
-**Solução:** [Como resolver]
+Logs são salvos em: \`logs/${name}-*.log\`
 `;
 }
 
