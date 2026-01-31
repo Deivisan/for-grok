@@ -21,20 +21,14 @@ Este repo contém contexto estruturado sobre o sistema AGI do Deivison.
 ## 📁 Estrutura Hierárquica
 
 ```
-for-grok/
-├── README.md                      ← Você está aqui
-├── system-prompt.md               ← Prompt para Deivison copiar/colar
-│
-├── context/                       ← Contexto detalhado (leia em ordem)
-│   ├── 01-identity.md            ← Quem é Deivison / DevSan AGI
-│   ├── 02-capabilities.md        ← O que o sistema faz (overview)
-│   ├── 03-hardware.md            ← Hardware e infraestrutura
-│   ├── 04-skills-detail.md       ← Skills detalhadas (20+ skills)
-│   ├── 05-missing-pieces.md      ← O que falta / perguntas
-│   └── 06-metodologia-scrape.md  ← Framework de captura
-│
-├── conversations/                 ← Conversas capturadas (vazio por enquanto)
-└── decisions/                     ← Decisões tomadas (vazio por enquanto)
+📁 context/
+├── 01-identity.md        ← Comece aqui (quem é Deivison/DevSan)
+├── 02-capabilities.md    ← O que o sistema faz
+├── 03-hardware.md        ← Hardware e infraestrutura
+├── 04-skills-detail.md   ← Skills em detalhe (20+ skills)
+├── 05-missing-pieces.md  ← O que falta / perguntas
+├── 06-metodologia-scrape.md ← Como capturar
+└── 07-finandev-context.md ← Vida pessoal, perfil psicológico
 ```
 
 ---
@@ -68,6 +62,10 @@ Base URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/`
 6. **context/06-metodologia-scrape.md**
    - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/06-metodologia-scrape.md`
    - Conteúdo: Como capturar conversas
+
+7. **context/07-finandev-context.md**
+   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/07-finandev-context.md`
+   - Conteúdo: Vida pessoal, perfil psicológico, rotinas, FinanDEV
 
 ---
 

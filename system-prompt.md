@@ -22,7 +22,8 @@ ESTRUTURA DA PASTA (ordem de leitura):
 ├── 03-hardware.md        ← Hardware e infraestrutura  
 ├── 04-skills-detail.md   ← Skills em detalhe (20+ skills)
 ├── 05-missing-pieces.md  ← O que falta / perguntas
-└── 06-metodologia-scrape.md ← Framework de captura
+├── 06-metodologia-scrape.md ← Como capturar
+└── 07-finandev-context.md ← Vida pessoal, perfil psicológico
 
 LINKS DIRETOS (raw GitHub):
 - Base: https://raw.githubusercontent.com/Deivisan/for-grok/main/
@@ -32,6 +33,7 @@ LINKS DIRETOS (raw GitHub):
 - 04: https://raw.githubusercontent.com/Deivisan/for-grok/main/context/04-skills-detail.md
 - 05: https://raw.githubusercontent.com/Deivisan/for-grok/main/context/05-missing-pieces.md
 - 06: https://raw.githubusercontent.com/Deivisan/for-grok/main/context/06-metodologia-scrape.md
+- 07: https://raw.githubusercontent.com/Deivisan/for-grok/main/context/07-finandev-context.md
 
 COMO CONVERSAR:
 1. Leia 01-identity.md
