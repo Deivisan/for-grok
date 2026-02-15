@@ -1,118 +1,159 @@
-# 🧠 DEVSAN AGI - Contexto Completo para Grok
+# 🦞🏢 for-grok v2.0 - Dual Mode
 
-**Owner:** Deivison Santana (@deivisan)  
-**Repo:** `github.com/Deivisan/for-grok` (temporário)  
-**Propósito:** Fornecer contexto máximo para conversação produtiva
+**Contexto completo para modo voz do Grok: DevSan AGI + DeiviTech**
 
----
-
-## 🎯 Como Navegar (Para o Grok)
-
-Este repo contém contexto estruturado sobre o sistema AGI do Deivison.
-
-**Instruções de leitura:**
-1. Comece lendo este README
-2. Siga a hierarquia abaixo em ordem
-3. Use web_fetch para cada arquivo .md individualmente
-4. Não tente ler tudo de uma vez - vá em etapas
+[![Version](https://img.shields.io/badge/version-2.0-blue)](./)
+[![Status](https://img.shields.io/badge/status-Ativo-success)](./)
+[![Mode](https://img.shields.io/badge/mode-Dual-orange)](./)
 
 ---
 
-## 📁 Estrutura Hierárquica
+## 🎯 O que é este Repo
+
+Este repositório fornece **contexto estruturado** para o Grok (modo voz ou texto) compreender completamente:
+
+- 🦞 **DevSan AGI** - Sistema de AGI pessoal de Deivison Santana
+- 🏢 **DeiviTech** - Empresa de soluções tecnológicas
+- 🔗 **Integração** - Como ambas as faces se complementam
+
+---
+
+## 📁 Estrutura
 
 ```
-📁 context/
-├── 01-identity.md        ← Comece aqui (quem é Deivison/DevSan)
-├── 02-capabilities.md    ← O que o sistema faz
-├── 03-hardware.md        ← Hardware e infraestrutura
-├── 04-skills-detail.md   ← Skills em detalhe (20+ skills)
-├── 05-missing-pieces.md  ← O que falta / perguntas
-├── 06-metodologia-scrape.md ← Como capturar
-└── 07-finandev-context.md ← Vida pessoal, perfil psicológico
+for-grok/
+├── system-prompt.md          ← COPIE E COLE NO GROK
+├── README.md                 ← Este arquivo
+├── context/                  ← Contextos modulares
+│   ├── 01-identidade-dual.md       ← As duas faces
+│   ├── 02-devsan-core.md           ← Sistema AGI pessoal
+│   ├── 03-deivitech-core.md        ← Empresa e serviços
+│   ├── 04-stack-tecnologico.md     ← Hardware + software
+│   ├── 05-capacidades-agregadas.md ← Sinergias
+│   ├── 06-integracoes.md           ← Fluxos integrados
+│   ├── 07-roadmap-dual.md          ← Próximos passos
+│   └── 08-restricoes-e-dicas.md    ← Como conversar
+├── conversations/            ← Capturas de conversas Grok
+├── decisions/               ← Decisões técnicas documentadas
+├── personas/                ← Perfis de agentes (futuro)
+└── legacy/                  ← Versão anterior (v1.0)
+    ├── context/            ← Contextos antigos
+    ├── deprecated/         ← Arquivos obsoletos
+    ├── decisions/          ← Decisões antigas
+    ├── conversations/      ← Conversas antigas
+    └── system-prompt.md    ← Prompt antigo
 ```
 
 ---
 
-## 🔗 Links Diretos (Raw GitHub)
+## 🚀 Como Usar
 
-Base URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/`
+### Passo 1: Copiar System Prompt
+1. Abra `system-prompt.md`
+2. Copie TODO o conteúdo entre os backticks (```)
+3. Cole no chat do Grok (grok.com)
 
-### Ordem de Leitura Recomendada:
+### Passo 2: Deixar o Grok Ler
+O Grok vai seguir a hierarquia e ler os arquivos em `context/` na ordem correta.
 
-1. **context/01-identity.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/01-identity.md`
-   - Conteúdo: Identidade, personalidade, quem é DevSan
-
-2. **context/02-capabilities.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/02-capabilities.md`
-   - Conteúdo: O que o sistema faz (agentes, skills, MCPs)
-
-3. **context/03-hardware.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/03-hardware.md`
-   - Conteúdo: Hardware, GPUs, sistema operacional
-
-4. **context/04-skills-detail.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/04-skills-detail.md`
-   - Conteúdo: Cada skill em detalhe
-
-5. **context/05-missing-pieces.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/05-missing-pieces.md`
-   - Conteúdo: Lacunas, perguntas, o que explorar
-
-6. **context/06-metodologia-scrape.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/06-metodologia-scrape.md`
-   - Conteúdo: Como capturar conversas
-
-7. **context/07-finandev-context.md**
-   - URL: `https://raw.githubusercontent.com/Deivisan/for-grok/main/context/07-finandev-context.md`
-   - Conteúdo: Vida pessoal, perfil psicológico, rotinas, FinanDEV
+### Passo 3: Conversar
+Converse normalmente. O Grok agora entende:
+- Seu sistema AGI pessoal (DevSan)
+- Sua empresa (DeiviTech)
+- Como integrar ambos
 
 ---
 
-## 🚀 Fluxo de Uso
+## 📖 Hierarquia de Contexto
 
-### Para Deivison:
-1. Copie o conteúdo de `system-prompt.md`
-2. Cole no Grok (modo texto ou voz)
-3. O Grok vai ler os outros arquivos via web
-4. Converse normalmente
-5. Quando terminar, gere Grok Share link
-6. Capture com Metodologia-Scrape
-7. Salve em `conversations/`
-8. Traga o resultado para DevSan (OpenCode) implementar
-
-### Para o Grok:
-1. Receba o system-prompt.md do Deivison
-2. Leia este README via web
-3. Siga a ordem de leitura acima
-4. Vá lendo um arquivo por vez conforme a conversa evolui
-5. Use o contexto para sugerir e ajudar
+| Ordem | Arquivo | Conteúdo |
+|-------|---------|----------|
+| 1 | `01-identidade-dual.md` | Apresentação das duas faces |
+| 2 | `02-devsan-core.md` | Sistema AGI em detalhe |
+| 3 | `03-deivitech-core.md` | Empresa e serviços |
+| 4 | `04-stack-tecnologico.md` | Hardware e software |
+| 5 | `05-capacidades-agregadas.md` | O que fazem juntos |
+| 6 | `06-integracoes.md` | Sinergias técnicas |
+| 7 | `07-roadmap-dual.md` | Próximos passos |
+| 8 | `08-restricoes-e-dicas.md` | Como conversar bem |
 
 ---
 
-## ⚠️ Segurança
+## 🎤 Uso no Modo Voz
 
-**Este repo é TEMPORÁRIO e PÚBLICO.**
+O system prompt foi otimizado para:
+- **Leitura fluida** pelo Grok
+- **Referências claras** a arquivos externos
+- **Instruções passo-a-passo**
+- **Tom conversacional**
 
-**✅ Pode conter:**
-- Estrutura de arquivos
-- Lista de ferramentas/skills
-- Hardware/configurações
-- Nome e identidade pública
-
-**❌ NUNCA contém:**
-- API keys, tokens, secrets
-- Senhas ou credenciais
-- Dados pessoais sensíveis
-- `.env` ou arquivos de secrets
+Simplesmente cole e converse naturalmente.
 
 ---
 
-## 🦞 DevSan AGI
+## 🕷️ Capturar Conversas
 
-Sistema AGI pessoal do Deivison Santana.
-- CLI-first, Bun-first, Arch-first
-- Autonomia total, zero bajulação
-- 20+ skills, 10 MCPs, 3 agentes
+Após conversar com Grok:
 
-**Pronto para conversar? Leia os arquivos em context/ 🚀**
+1. **Gere Grok Share link**
+   - Clique em "Share" no Grok
+   - Copie o link
+
+2. **Capture com Metodologia-Scrape**
+   ```bash
+   cd ~/Projetos/Metodologia-Scrape/packages/mcp-grok-scraper
+   bun run index-full.ts --url="https://grok.com/share/SEU_LINK"
+   ```
+
+3. **Salve neste repo**
+   ```bash
+   cp captures/grok_*.md ~/Projetos/for-grok/conversations/
+   cd ~/Projetos/for-grok
+   git add .
+   git commit -m "🕷️ Adiciona conversa Grok - $(date +%Y-%m-%d)"
+   git push
+   ```
+
+4. **Implemente no clawdbot**
+   - Abra OpenCode
+   - Forneça o arquivo capturado
+   - Peça: "Implemente as decisões da conversa Grok"
+
+---
+
+## 🔄 Versões
+
+### v2.0 (Atual) - Dual Mode
+- Integração DevSan + DeiviTech
+- Contexto empresarial adicionado
+- Foco em monetização de skills
+- Roadmap unificado
+
+### v1.0 (Legado)
+- Apenas contexto pessoal (DevSan)
+- Foco em sistema AGI
+- Ver pasta `legacy/`
+
+---
+
+## 📝 Contribuição
+
+Este é um repositório pessoal, mas se quiser usar como template:
+
+1. Fork o repo
+2. Adapte os contextos para sua realidade
+3. Mantenha a estrutura modular
+4. Versione suas mudanças
+
+---
+
+## 🔗 Links Úteis
+
+- **GitHub:** https://github.com/Deivisan/for-grok
+- **Metodologia-Scrape:** https://github.com/Deivisan/Metodologia-Scrape
+- **DeiviTech:** https://github.com/Deivisan/deivitech
+- **DevSan:** (privado)
+
+---
+
+**🦞🏢 Dual Mode Ativo | Mantido por @deivisan**
