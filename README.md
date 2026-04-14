@@ -1,162 +1,160 @@
-# 🖥️ for-grok - DeiviTech Formatação
+# 🎯 for-grok - Template JIT para Conversas com Grok
 
-**Contexto completo para modo voz do Grok: Negócio de Formatação de PCs**
-
-[![Version](https://img.shields.io/badge/version-3.0-blue)](./)
-[![Status](https://img.shields.io/badge/status-Ativo-success)](./)
-[![Focus](https://img.shields.io/badge/focus-Formatação-orange)](./)
+**Repositório template para contexto customizável Just-In-Time**
 
 ---
 
 ## 🎯 O que é este Repo
 
-Este repositório fornece **contexto estruturado e profundo** para o Grok (modo voz ou texto) compreender completamente o negócio de formatação de computadores de Deivison Santana em Feira de Santana, BA.
+Este é um **template limpo** para você usar como contexto JIT (Just-In-Time) em conversas com o Grok (modo voz ou texto).
 
-**Foco principal:** Otimizar e escalar a DeiviTech Formatação usando automações DevSan AGI.
-
----
-
-## 🏢 Sobre o Negócio
-
-**DeiviTech Formatação**
-- 📍 Feira de Santana, Bahia
-- 👨‍💻 Deivison Santana - 10+ anos de experiência
-- 💻 500+ PCs formatados
-- 📞 WhatsApp: (75) 98123-1019
-- 🌐 https://deivisan.github.io/DeiviTech-Formatacao/
-
-**Serviços:**
-- Formatação Windows 10/11 (R$ 25-100)
-- Linux gratuito
-- Upgrades SSD/RAM
-- Análise IA gratuita
-- Atendimento domiciliar
-
----
-
-## 📁 Estrutura
-
-```
-for-grok/
-├── system-prompt.md          ← COPIE E COLE NO GROK
-├── README.md                 ← Este arquivo
-├── context/                  ← Contextos do negócio
-│   ├── 01-o-negocio.md            ← Modelo completo + preços
-│   ├── 02-operacoes.md            ← Fluxo de atendimento
-│   ├── 03-tecnico.md              ← Sistemas, hardware, processos
-│   ├── 04-estrategia.md           ← Marketing e crescimento
-│   ├── 05-integracao-devsan.md    ← Automações aplicáveis
-│   └── 06-roadmap-negocio.md      ← Plano estratégico completo
-├── conversations/            ← Capturas de conversas Grok
-├── decisions/               ← Decisões de negócio
-└── legacy/                  ← Versões anteriores (v1.0, v2.0)
-```
+**Princípio:** Cada conversa tem seu próprio contexto específico. Você customiza os arquivos aqui para cada sessão específica com o Grok.
 
 ---
 
 ## 🚀 Como Usar
 
-### Passo 1: Copiar System Prompt
+### Passo 1: Clone ou Faça Fork
+```bash
+git clone https://github.com/Deivisan/for-grok.git
+cd for-grok
+```
+
+### Passo 2: Customize para sua Conversa
+1. **Edite `system-prompt.md`** - Defina o contexto específico da conversa
+2. **Crie arquivos em `context/`** - Adicione informações detalhadas
+3. **Organize por número** - Use `01-`, `02-`, `03-` para ordem de leitura
+
+### Passo 3: Copie para o Grok
 1. Abra `system-prompt.md`
 2. Copie TODO o conteúdo entre os backticks (```)
 3. Cole no chat do Grok (grok.com)
 
-### Passo 2: Deixar o Grok Ler
-O Grok vai seguir a hierarquia e ler os arquivos em `context/` na ordem correta.
-
-### Passo 3: Conversar sobre o Negócio
-Converse sobre:
-- Como aumentar clientes
-- Como otimizar atendimento
-- Como automatizar processos
-- Como escalar o negócio
-- Como integrar DevSan AGI
+### Passo 4: Converse e Capture
+1. Converse normalmente com o Grok
+2. Capture insights importantes
+3. Salve conversas em `conversations/`
+4. Salve decisões em `decisions/`
 
 ---
 
-## 📖 Hierarquia de Contexto
+## 📁 Estrutura do Template
 
-| Ordem | Arquivo | Conteúdo |
-|-------|---------|----------|
-| 1 | `01-o-negocio.md` | Modelo completo, preços, serviços, margens |
-| 2 | `02-operacoes.md` | Fluxo de atendimento, operações diárias |
-| 3 | `03-tecnico.md` | Windows, Linux, hardware, processos |
-| 4 | `04-estrategia.md` | Marketing, crescimento, posicionamento |
-| 5 | `05-integracao-devsan.md` | Como usar automações pessoais no negócio |
-| 6 | `06-roadmap-negocio.md` | Plano de 24 meses para escalar |
+```
+for-grok/
+├── README.md                    ← Este arquivo
+├── system-prompt.md             ← COPIE E COLE NO GROK
+├── context/                     ← Contextos específicos da conversa
+│   ├── 01-tema-principal.md     ← Comece aqui
+│   ├── 02-detalhes.md           ← Informações detalhadas
+│   └── 03-etc.md                ← Mais contexto se necessário
+├── conversations/               ← Capturas de conversas
+├── decisions/                   ← Decisões tomadas
+├── deprecated/                  ← Conteúdo antigo
+├── legacy/                      ← Versões anteriores
+├── logs/                        ← Logs de atividade
+└── personas/                    ← Personas/personagens
+```
+
+---
+
+## 🎨 Padrões de Customização
+
+### Para Conversas Técnicas
+- `01-problema.md` - Descrição detalhada do problema
+- `02-codigo.md` - Código relevante
+- `03-objetivo.md` - O que você quer alcançar
+
+### Para Planejamento de Negócios
+- `01-negocio.md` - Descrição do negócio/projeto
+- `02-objetivos.md` - Metas específicas
+- `03-recursos.md` - Recursos disponíveis
+
+### Para Brainstorming Criativo
+- `01-ideia.md` - Ideia central
+- `02-inspiracao.md` - Referências
+- `03-restricoes.md` - Limitações
+
+---
+
+## 📝 Exemplo de Uso
+
+### Customizando para uma Conversa sobre Automação
+
+1. **Edite `system-prompt.md`**:
+```markdown
+# 🎯 SYSTEM PROMPT - Automação de Processos
+
+```
+Você é Grok, conversando com Deivison sobre automação de processos.
+
+## CONTEXTO ESPECÍFICO
+Leia os arquivos em ordem:
+1. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/01-processos.md
+2. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/02-automacao.md
+3. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/03-objetivos.md
+
+FOCO: Automatizar processos manuais repetitivos.
+```
+```
+
+2. **Crie `context/01-processos.md`**:
+```markdown
+# Processos Manuais Atuais
+
+## Processo 1: Backup Diário
+- Descrição: Copiar arquivos manualmente
+- Tempo: 30 minutos/dia
+- Frequência: Diária
+
+## Processo 2: Atualização de Dados
+- Descrição: Atualizar planilhas manualmente
+- Tempo: 1 hora/semana
+- Frequência: Semanal
+```
+
+3. **Copie e cole no Grok**
+
+---
+
+## 🔄 Versionamento
+
+Este repositório é um **template**. Para manter histórico:
+
+1. **Faça commit** após cada conversa significativa
+2. **Use tags** para marcar versões importantes
+3. **Mova conteúdo antigo** para `legacy/` quando necessário
 
 ---
 
 ## 🎤 Uso no Modo Voz
 
-O system prompt foi otimizado para:
+O template foi otimizado para:
 - **Leitura fluida** pelo Grok
-- **Contexto profundo** do negócio real
-- **Foco em resultados** (clientes, receita, escala)
-- **Instruções práticas** aplicáveis imediatamente
+- **Estrutura hierárquica** clara
+- **Customização rápida** para qualquer tema
+- **Captura organizada** de insights
 
 ---
 
-## 🕷️ Capturar Conversas
+## 📊 Histórico de Versões
 
-Após conversar com Grok:
+### v4.0 (Atual) - Template JIT
+- Template limpo e genérico
+- Estrutura para qualquer tipo de conversa
+- Foco em customização rápida
 
-1. **Gere Grok Share link**
-   - Clique em "Share" no Grok
-   - Copie o link
-
-2. **Capture com Metodologia-Scrape**
-   ```bash
-   cd ~/Projetos/Metodologia-Scrape/packages/mcp-grok-scraper
-   bun run index-full.ts --url="https://grok.com/share/SEU_LINK"
-   ```
-
-3. **Salve neste repo**
-   ```bash
-   cp captures/grok_*.md ~/Projetos/for-grok/conversations/
-   cd ~/Projetos/for-grok
-   git add .
-   git commit -m "🕷️ Adiciona conversa Grok - $(date +%Y-%m-%d)"
-   git push
-   ```
-
-4. **Implemente as melhorias no negócio**
+### v3.0 (Anterior) - Focus Mode: Formatação
+- Contexto específico para negócio de formatação
+- Ver histórico git para detalhes
 
 ---
 
-## 🔄 Versões
+## 🔗 Links Úteis
 
-### v3.0 (Atual) - Focus Mode: Formatação
-- Foco TOTAL no negócio de formatação de PCs
-- Contextos profundos sobre operações reais
-- Preços, margens, estratégias específicas
-- Roadmap de 24 meses para escalar
-- Integração prática DevSan → Negócio
-
-### v2.0 (Legado) - Dual Mode
-- Integração genérica DevSan + DeiviTech
-- Contexto empresarial amplo
-- Ver pasta `legacy/context/` (arquivos 01-08)
-
-### v1.0 (Legado) - DevSan Only
-- Apenas contexto pessoal AGI
-- Ver pasta `legacy/context/` (arquivos originais)
-
----
-
-## 📝 Contribuição
-
-Este é um repositório pessoal para o negócio DeiviTech Formatação.
-
----
-
-## 🔗 Links Importantes
-
-- **Site DeiviTech:** https://deivisan.github.io/DeiviTech-Formatacao/
 - **GitHub:** https://github.com/Deivisan/for-grok
-- **WhatsApp:** (75) 98123-1019
-- **Metodologia-Scrape:** https://github.com/Deivisan/Metodologia-Scrape
+- **Grok:** https://grok.com
 
 ---
 
-**🖥️ DeiviTech Formatação | Feira de Santana, BA | (75) 98123-1019**
+**🔄 Template JIT - Customize para cada conversa com Grok**
