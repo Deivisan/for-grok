@@ -4,9 +4,9 @@
 
 ---
 
-## 🚀 Passo a Passo
+## 🚀 Passo a Passo Completo
 
-### 1. Limpe o Contexto Anterior
+### 1. Limpe os Placeholders
 ```bash
 # Remova arquivos de exemplo
 rm context/*.md
@@ -15,45 +15,34 @@ rm context/*.md
 rm -rf conversations/*
 ```
 
-### 2. Edite o System Prompt
-Abra `system-prompt.md` e edite o conteúdo entre os backticks (```):
-
-```markdown
-# 🎯 SYSTEM PROMPT - [SEU TEMA AQUI]
-
-```
-Você é Grok, conversando com Deivison sobre [TEMA ESPECÍFICO].
-
-## CONTEXTO ESPECÍFICO
-Leia os arquivos em ordem:
-1. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/01-[tema-principal].md
-2. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/02-[detalhes].md
-3. [adicione mais se necessário]
-
-FOCO: [O que você quer alcançar nesta conversa?]
-```
-```
-
-### 3. Crie Arquivos de Contexto
-Crie arquivos numerados em `context/`:
+### 2. Crie Seus Arquivos de Contexto
+Crie arquivos **numerados** em `context/` para ordem de leitura:
 
 ```bash
-# Exemplo para uma conversa técnica
-vim context/01-problema.md
-vim context/02-codigo.md  
+# Crie seus arquivos
+vim context/01-tema.md
+vim context/02-detalhes.md
 vim context/03-objetivos.md
+vim context/04-codigo.md
+vim context/05-metricas.md
+```
 
-# Exemplo para planejamento de negócios
-vim context/01-negocio.md
-vim context/02-objetivos.md
-vim context/03-recursos.md
+### 3. Atualize o System Prompt
+Abra `system-prompt.md` e **adicione os links dos seus arquivos** na lista:
+
+```markdown
+✅ **5. Código Fonte**
+https://raw.githubusercontent.com/Deivisan/for-grok/main/context/04-codigo.md
+
+✅ **6. Métricas**
+https://raw.githubusercontent.com/Deivisan/for-grok/main/context/05-metricas.md
 ```
 
 ### 4. Copie para o Grok
 1. Abra `system-prompt.md`
-2. Copie TODO o conteúdo **entre os backticks** (```)
-3. Cole no chat do Grok
-4. O Grok vai ler os arquivos em ordem
+2. Copie **TODO O CONTEÚDO** entre os backticks (```)
+3. Cole no chat do Grok (grok.com)
+4. **Aguarde** o Grok ler todos os arquivos
 
 ### 5. Converse e Capture
 1. Converse normalmente
@@ -63,68 +52,60 @@ vim context/03-recursos.md
 
 ---
 
-## 🎨 Padrões Comuns
+## 🧪 Limites e Capacidades do Grok
 
-### Para Resolução de Problemas Técnicos
-- `01-problema.md` - Descrição detalhada do problema
-- `02-codigo.md` - Código relevante e configurações
-- `03-objetivos.md` - O que você quer resolver
+### O que o Grok consegue fazer:
+✅ Ler arquivos markdown via URLs raw GitHub
+✅ Ler até **8-12 arquivos** por sessão
+✅ Ler até **~100KB por arquivo** completamente
+✅ Manter contexto durante toda a conversa
+✅ Navegar entre links dentro dos arquivos
 
-### Para Planejamento Estratégico
-- `01-negocio.md` - Descrição do negócio/projeto
-- `02-objetivos.md` - Metas específicas e métricas
-- `03-recursos.md` - Recursos disponíveis e restrições
+### Boas Práticas:
+🔹 Sempre numere os arquivos em ordem hierárquica
+🔹 Coloque os arquivos mais importantes primeiro
+🔹 Evite arquivos maiores que 100KB
+🔹 Use markdown simples, formatação limpa
+🔹 Mantenha links diretos para raw.githubusercontent.com
 
-### Para Brainstorming Criativo
-- `01-ideia.md` - Ideia central e inspiração
-- `02-contexto.md` - Informações de fundo
-- `03-restricoes.md` - Limitações e preferências
+### O que NÃO funciona:
+❌ Arquivos em repositórios privados
+❌ Arquivos com proteção Cloudflare
+❌ URLs curtas (bit.ly, tinyurl)
+❌ Arquivos binários ou imagens
+❌ Mais de 12 arquivos por sessão
 
 ---
 
-## 📝 Exemplo Prático
+## 📝 Exemplo Prático Completo
 
-### Conversa sobre Automação de Backup
-
-**system-prompt.md:**
+### Passo 1: Crie `context/01-problema.md`
 ```markdown
-# 🎯 SYSTEM PROMPT - Automação de Backup
+# Problema: Backup Manual Diário
 
-```
-Você é Grok, especialista em automação.
-
-PROBLEMA: Backup manual diário consome 30 minutos
-OBJETIVO: Automatizar processo completo
-
-Leia os arquivos:
-1. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/01-processo.md
-2. https://raw.githubusercontent.com/Deivisan/for-grok/main/context/02-recursos.md
-```
+## Situação Atual
+- Backup manual de 5GB todos os dias às 18h
+- Tempo gasto: 30 minutos/dia
+- Risco: Esquecer, falha humana
 ```
 
-**context/01-processo.md:**
-```markdown
-# Processo de Backup Atual
-
-## Backup Diário
-- Descrição: Copiar 5GB de arquivos manualmente
-- Tempo: 30 minutos/dia
-- Frequência: Diária às 18h
-- Local: HD externo USB
-```
-
-**context/02-recursos.md:**
+### Passo 2: Crie `context/02-recursos.md`
 ```markdown
 # Recursos Disponíveis
 
 ## Hardware
-- Computador: Linux Ubuntu 22.04
-- Storage: HD externo 1TB USB 3.0
+- Sistema: Linux Ubuntu 22.04
+- Armazenamento: HD externo 1TB USB 3.0
 
-## Software
-- Sistema: Linux bash
-- Conhecimento: Intermediário em scripting
+## Conhecimento
+- Bash: Intermediário
+- Python: Básico
 ```
+
+### Passo 3: Atualize `system-prompt.md`
+Adicione os links na lista de arquivos para ler
+
+### Passo 4: Cole no Grok e converse
 
 ---
 
@@ -139,11 +120,21 @@ git push
 
 Para conteúdo antigo:
 ```bash
-# Mova para legacy/
-mv context/ legacy/context-[data]
-mv conversations/ legacy/conversations-[data]
+# Mova para legacy/ para não poluir
+mv context/ legacy/context-2026-04-14
+mv conversations/ legacy/conversations-2026-04-14
 ```
 
 ---
 
-**🎯 Template JIT - Customize para cada conversa!**
+## ✅ Checklist Antes de Usar
+
+- [ ] Todos os arquivos em `context/` foram editados
+- [ ] Links atualizados no `system-prompt.md`
+- [ ] Todos os arquivos estão com permissão pública no GitHub
+- [ ] Os arquivos são acessíveis via raw.githubusercontent.com
+- [ ] Você copiou TODO o conteúdo entre os backticks
+
+---
+
+**🎯 Pronto para sua conversa personalizada com Grok!**
