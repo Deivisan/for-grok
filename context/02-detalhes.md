@@ -30,26 +30,17 @@ Exemplo clássico de uso:
 > Conversa de 60 minutos sobre lista de compras: percorre mentalmente supermercados, compara preços, marcas, promoções, qualidade, logística, preferências pessoais, restrições de tempo/dinheiro.
 > Depois: "Agora refatora isso. Quero só a lista final limpa, com justificativas curtas por item, agrupada por categoria, sem o que eu falei, sem horários, sem o processo de decisão — só o resultado refinado."
 
-## Integração Crítica: Metodologia-Scrape
+## Sobre captura e memória de conversas (Metodologia-Scrape)
 
-Todo o valor gerado em conversas importantes é capturado e estruturado via **Metodologia-Scrape** (repositório irmão):
+Existe um sistema chamado **Metodologia-Scrape** (repositório atualmente privado e em reestruturação) que serve para:
 
-- Repositório: https://github.com/Deivisan/Metodologia-Scrape
-- Fluxo:
-  1. Conversa importante no Grok → compartilhar via "Grok Share" (link permanente público).
-  2. Metodologia-Scrape captura automaticamente (Puppeteer Stealth + Firecrawl + MCP tools).
-  3. Gera artefatos: JSON denso + Markdown completo + metadados.
-  4. Esses artefatos são usados para:
-     - Refatoração posterior (pelo próprio Grok ou por outros agentes como DevSan/SAL).
-     - Memória persistente.
-     - Treinamento de prompts.
-     - Integração com outros sistemas (FinanDEV, DevSan, etc.).
-- O Grok **deve conhecer** esse repositório em profundidade: metodologias, MCP, capturas, prompts master (PROMPT_MASTER_V3.md, METODOLOGIA_CONSOLIDADA.md, ROADMAP.md, treinamento/TREINAMENTO_COMPLETO.md, etc.).
+- Capturar conversas completas e densas feitas no Grok via links de compartilhamento permanentes (Grok Share).
+- Armazenar o conteúdo de forma estruturada (JSON + Markdown limpo).
+- Permitir refatoração posterior: transformar conversas longas e cheias de ruído em artefatos úteis (listas otimizadas, decisões, planos, prompts refinados, etc.).
 
-Quando Deivison pedir para refatorar uma conversa antiga, o Grok deve:
-- Saber que a captura existe no Metodologia-Scrape.
-- Usar web para acessar a captura mais recente se necessário.
-- Refatorar com consciência de que o artefato final pode ser salvo de volta em capturas/ ou em outros repositórios.
+O objetivo principal da Metodologia-Scrape é exatamente o que Deivison descreve: capturar **tudo o que foi falado** durante sessões ricas de raciocínio e depois refatorar para obter versões limpas e utilizáveis.
+
+Por enquanto o repositório está privado. Quando Deivison precisar usar capturas antigas ou o sistema de captura, ele fornecerá o contexto diretamente ou indicará como acessar. Não dependa de links públicos ou raw do repositório Metodologia-Scrape neste momento.
 
 ## Comportamento Esperado do Grok (Este Contexto)
 
@@ -57,9 +48,8 @@ Toda vez que Deivison colar o system-prompt e iniciar conversa:
 
 1. **Leia TODOS os arquivos listados** (em ordem hierárquica) via web scrape (raw.githubusercontent.com).
 2. **Use a web para se autoatualizar**:
-   - Releia o README e context/ deste repositório.
-   - Acesse o repositório Metodologia-Scrape e leia os arquivos chave (README, METODOLOGIA_CONSOLIDADA, PROMPT_MASTER_V3, ROADMAP, capturas recentes, treinamento/).
-   - Verifique estado atual de prompts e metodologias.
+   - Releia o README e context/ deste repositório (for-grok).
+   - Verifique o estado atual dos prompts e da metodologia de uso.
 3. **Carregue o modo de operação completo**:
    - Entenda que Deivison está usando você para **extração máxima de inteligência** + **anotação estruturada** + **refatoração inteligente posterior**.
    - Não resuma cegamente. Refatore com consciência de contexto.
@@ -106,10 +96,4 @@ Toda vez que Deivison colar o system-prompt e iniciar conversa:
 
 **Este arquivo substitui qualquer placeholder anterior.** É o detalhamento técnico e comportamental permanente.
 
-Leia também (obrigatório via web):
-- Metodologia-Scrape/README.md
-- Metodologia-Scrape/METODOLOGIA_CONSOLIDADA.md
-- Metodologia-Scrape/PROMPT_MASTER_V3.md
-- Metodologia-Scrape/ROADMAP.md
-- Metodologia-Scrape/treinamento/TREINAMENTO_COMPLETO.md
-- Capturas recentes em Metodologia-Scrape/captures/
+(Nota: O repositório Metodologia-Scrape está atualmente privado. O entendimento conceitual do que ele faz — captura + refatoração de conversas — já está descrito neste arquivo e no tema principal.)

@@ -11,7 +11,7 @@ Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que a
 ## 📁 Workspace e Estrutura Principal
 - Workspace raiz: `/home/deivi/Projetos/`
 - Repositório atual (contexto JIT público para Grok): `for-grok/`
-- Sistema de captura e memória persistente: `Metodologia-Scrape/`
+- Sistema de captura e memória persistente: Metodologia-Scrape (atualmente privado e em refatoração; o conceito de captura + refatoração já está descrito no contexto permanente do for-grok).
 - Outros repositórios ativos: DevSan, FinanDEV (privado), e ~30+ outros.
 
 ### Estrutura Importante dentro de for-grok (contexto para Grok)
@@ -62,4 +62,4 @@ Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que a
 **Mantenedor:** Deivison Santana (@deivisan)  
 **Agentes principais:** DevSan, Grok (via for-grok), SAL, outros MCPs.
 
-Leia também: README.md, CUSTOMIZAR.md, base/README.md, e o repositório Metodologia-Scrape.
+Leia também: README.md, CUSTOMIZAR.md, base/README.md. (O repositório Metodologia-Scrape está atualmente privado.)

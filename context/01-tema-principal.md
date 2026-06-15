@@ -46,7 +46,7 @@ Este é o **contexto JIT público** que o Grok lê via web (raw.githubuserconten
 
 - **Densidade máxima** — arquivos são longos e ricos de propósito (Grok tem >128k tokens).
 - **Zero lógica limitante** — não diga "não consigo ler mais de X arquivos", "resuma para caber", etc.
-- **Auto-atualização via web** — sempre que ler este prompt, use web para confirmar o estado atual do for-grok e do Metodologia-Scrape.
+- **Auto-atualização via web** — sempre que ler este prompt, use web para confirmar o estado atual do for-grok.
 - **Memória de fluxo** — entenda que a conversa atual pode ser capturada depois e refatorada.
 - **Parceiro de extração** — ajude a anotar, estruturar, criar tabelas, e depois ajude a refatorar eliminando ruído.
 

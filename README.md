@@ -81,20 +81,13 @@ for-grok/
 
 ---
 
-## 🔗 Integração com Metodologia-Scrape (Essencial)
+## Sobre Metodologia-Scrape (sistema de captura)
 
-Este repositório (for-grok) é o **contexto de entrada** para o Grok.
+Existe um sistema chamado **Metodologia-Scrape** (https://github.com/Deivisan/Metodologia-Scrape) que é usado para capturar conversas ricas feitas com o Grok, armazená-las de forma estruturada e permitir refatoração posterior.
 
-O **Metodologia-Scrape** (https://github.com/Deivisan/Metodologia-Scrape) é o **sistema de captura, estruturação e memória**:
+Atualmente o repositório está **privado** (em processo de refatoração e melhoria das metodologias, pois havia chaves de API expostas). Por isso, o contexto em for-grok foi ajustado para ser auto-suficiente: o Grok deve entender o conceito e o fluxo sem precisar ler arquivos raw do Metodologia-Scrape.
 
-- Captura conversas via Grok Share (Puppeteer Stealth + Firecrawl + MCP).
-- Gera artefatos densos (JSON + MD).
-- Contém prompts master, roadmap, treinamento, capturas reais.
-- É a fonte de verdade para refatoração posterior e continuidade.
-
-**No system-prompt atual**, o Grok é instruído explicitamente a ler os arquivos chave do Metodologia-Scrape toda vez (README, METODOLOGIA_CONSOLIDADA, PROMPT_MASTER_V3, ROADMAP, TREINAMENTO_COMPLETO, capturas recentes).
-
-Quando você pedir para refatorar ou retomar algo, o Grok deve usar as capturas como memória externa.
+Quando o repositório voltar a ficar público e as metodologias estiverem melhores, Deivison atualizará o contexto para voltar a integrar as leituras.
 
 ---
 
