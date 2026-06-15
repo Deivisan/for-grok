@@ -1,0 +1,45 @@
+# Environment & secrets
+.env
+.env.*
+*.env
+secrets/
+*.pem
+*.key
+*secret*
+*token*
+
+# Dependencies (Bun / Node)
+node_modules/
+bun.lockb
+package-lock.json
+yarn.lock
+
+# Runtime / build
+dist/
+build/
+.next/
+out/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & local data
+logs/
+*.log
+conversations/
+decisions/
+deprecated/
+legacy/
+
+# Temp
+tmp/
+temp/
+*.tmp
