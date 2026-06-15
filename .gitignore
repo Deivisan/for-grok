@@ -1,4 +1,4 @@
-# Environment & secrets
+# Environment & secrets (never commit)
 .env
 .env.*
 *.env
@@ -7,18 +7,22 @@ secrets/
 *.key
 *secret*
 *token*
+*.p12
+*.pfx
 
-# Dependencies (Bun / Node)
+# Dependencies
 node_modules/
 bun.lockb
 package-lock.json
 yarn.lock
 
-# Runtime / build
+# Build / runtime artifacts
 dist/
 build/
 .next/
 out/
+*.exe
+*.bin
 
 # IDE / editor
 .idea/
@@ -31,15 +35,28 @@ out/
 .DS_Store
 Thumbs.db
 
-# Logs & local data
-logs/
-*.log
-conversations/
-decisions/
-deprecated/
-legacy/
-
-# Temp
+# Only truly temporary local junk
 tmp/
 temp/
 *.tmp
+*.temp
+
+# =====================================================
+# HISTORY & CONTEXT — KEPT IN GIT ON PURPOSE
+# =====================================================
+# This repo is designed to give persistent, rich context to Grok
+# via public raw files. We WANT to track evolution of usage,
+# past conversations, decisions, and old prompt versions.
+#
+# Do NOT ignore these:
+# conversations/   - captured rich conversations
+# decisions/       - important decisions and reasoning
+# deprecated/      - old prompt/context versions (historical)
+# legacy/          - previous full snapshots or big refactors
+# logs/            - activity logs showing patterns over time
+#
+# When starting "novo fluxo de conversação", we reset/copy clean
+# base placeholders instead of deleting history.
+#
+# If something specific becomes too noisy later, move it to legacy/
+# or ignore explicitly with clear commit message.
