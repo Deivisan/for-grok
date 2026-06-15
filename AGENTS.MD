@@ -1,4 +1,4 @@
-# 🤖 agentes.md - Contexto Central para Agentes (DevSan, Grok, SAL, etc.)
+# 🤖 AGENTS.MD - Contexto Central para Agentes (DevSan, Grok, SAL, etc.)
 
 **Arquivo canônico de contexto de agente.**  
 Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que agentes precisam saber sobre o workspace de Deivison Santana.
@@ -25,7 +25,7 @@ Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que a
 - `.gitignore` foi suavizado exatamente para **não perder** esse histórico.
 
 ### Centralização de Agentes (2026+)
-- **agentes.md** (este arquivo) → Fonte única de verdade para agentes.
+- **AGENTS.MD** (este arquivo) → Fonte única de verdade para agentes.
 - **.cloud/** → Contém napkin.md + settings.json (substitui a antiga .claude/).
 - **Cloud.md** → Resumo + notas centralizadas.
 - **CLAUDE.md** (raiz) → Versão mínima legada (manter por compatibilidade curta).

@@ -4,10 +4,10 @@
 
 ## Estrutura Atual de Agentes
 
-- **agentes.md** (raiz): Arquivo principal e canônico de contexto para agentes. É o que deve ser lido primeiro.
+- **AGENTS.MD** (raiz): Arquivo principal e canônico de contexto para agentes. É o que deve ser lido primeiro.
 - **.cloud/**: Pasta com napkin runbook + settings.json (versão moderna do antigo .claude/).
 - **Cloud.md**: Este arquivo (resumo + links).
-- **CLAUDE.md** (raiz): Versão mínima/legada (manter por compatibilidade, mas preferir agentes.md).
+- **CLAUDE.md** (raiz): Versão mínima/legada (manter por compatibilidade, mas preferir AGENTS.MD).
 - **.claude/**: Pasta antiga (pode ser movida para deprecated/ no futuro).
 
 ## Regras de Curation (do Napkin)
@@ -41,4 +41,4 @@
 
 ---
 
-**Última atualização:** 2026-06-15 (reestruturação para agentes.md + base/ + histórico preservado)
+**Última atualização:** 2026-06-15 (reestruturação para AGENTS.MD + base/ + histórico preservado)
