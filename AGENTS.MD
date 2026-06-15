@@ -25,10 +25,8 @@ Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que a
 - `.gitignore` foi suavizado exatamente para **não perder** esse histórico.
 
 ### Centralização de Agentes (2026+)
-- **AGENTS.MD** (este arquivo) → Fonte única de verdade para agentes.
-- **.cloud/** → Contém napkin.md + settings.json (substitui a antiga .claude/).
-- **Cloud.md** → Resumo + notas centralizadas.
-- **CLAUDE.md** (raiz) → Versão mínima legada (manter por compatibilidade curta).
+- **AGENTS.MD** (este arquivo) → Fonte única de verdade para agentes. Leia este primeiro.
+- Arquivos específicos do Claude (`.claude/`, `CLAUDE.md`, napkin, settings) **não são mantidos aqui**. Este repositório é focado em contexto para Grok. Os arquivos de agente do Claude ficam no workspace principal do usuário (ex: DevSan ou repositórios de orquestração).
 
 ## 🔧 Stack Comum (Obrigatório)
 - **Runtime:** Bun (nunca use npm/node/yarn).
@@ -60,8 +58,8 @@ Leia este arquivo primeiro. Ele substitui CLAUDE.md legados e centraliza o que a
 
 ---
 
-**Status:** 2026-06-15 — Reestruturação completa para base/ + agentes.md + preservação de histórico.  
+**Status:** 2026-06-15 — Reestruturação completa para base/ + AGENTS.MD + preservação de histórico (sem arquivos específicos do Claude).  
 **Mantenedor:** Deivison Santana (@deivisan)  
 **Agentes principais:** DevSan, Grok (via for-grok), SAL, outros MCPs.
 
-Leia também: Cloud.md, .cloud/napkin.md, README.md, CUSTOMIZAR.md, e o repositório Metodologia-Scrape.
+Leia também: README.md, CUSTOMIZAR.md, base/README.md, e o repositório Metodologia-Scrape.
