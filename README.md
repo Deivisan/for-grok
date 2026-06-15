@@ -66,9 +66,7 @@ for-grok/
 ├── README.md                    ← Este arquivo (visão geral + fluxo)
 ├── system-prompt.md             ← O PEDIDO QUE VOCÊ COPIA E COLE NO GROK (atualizado com contexto permanente + Metodologia-Scrape)
 ├── CUSTOMIZAR.md                ← Guia de customização e evolução
-├── CLAUDE.md                    ← Instruções mínimas para agentes (YOLO + stack)
-├── .claude/
-│   └── napkin.md                ← Runbook de curation (prioridades)
+├── AGENTS.MD                    ← Contexto canônico para agentes (Grok, DevSan, etc.)
 ├── context/
 │   ├── 01-tema-principal.md     ← Tema permanente: extração + refatoração + Metodologia-Scrape
 │   ├── 02-detalhes.md           ← Detalhamento denso do fluxo, comportamento esperado, ecossistema
