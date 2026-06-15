@@ -20,15 +20,23 @@ Exemplo clássico:
 > Lista de compras + 60 minutos conversando preços, marcas, promoções, dúvidas, decisões parciais.
 > Depois: refatorar para uma lista limpa, otimizada, com justificativas e contexto de por que cada item foi escolhido — sem o ruído da conversa.
 
-## Integração com Metodologia-Scrape
+## Integração com Captura e Metodologia-Scrape (atualizado 2026-06-15)
 
-Todo esse fluxo é suportado por **Metodologia-Scrape** (https://github.com/Deivisan/Metodologia-Scrape):
-
+**Método atual de captura (validado e fixado):**
 - Conversas importantes são compartilhadas via Grok Share (link permanente público).
-- Metodologia-Scrape captura automaticamente (Puppeteer Stealth + Firecrawl + MCP).
-- Capturas geram JSON + Markdown denso.
-- Depois a captura é usada para refatoração, memória persistente, integração com outros agentes (DevSan, SAL, etc.).
-- O objetivo final é transformar conversas em **artefatos estruturados** (código, decisões, listas limpas, planos, prompts atualizados).
+- Captura é feita de forma agentica e confiável via **BrowserOS** + o script canônico `scripts/capture/grok-share-capture.js` (ou a cópia em `tools/browseros/`).
+- O script faz scroll paciente até a conversa estabilizar, remove todo ruído de UI e devolve **um único Markdown limpo** com alternância explícita Usuário / Grok.
+- Validado no link definitivo: https://grok.com/share/c2hhcmQtMg_eb824561-8d15-406a-9286-ffa9eb6486d0 (13 turns perfeitos, início e fim verificados, zero perda).
+- Testado com sucesso em sessões reais de 21 e 226 turns.
+
+**Metodologia-Scrape** (https://github.com/Deivisan/Metodologia-Scrape) continua sendo o conceito e destino de longo prazo:
+- Repositório atualmente privado e em reestruturação.
+- Quando estiver pronto, o script + metodologia de captura do for-grok (BrowserOS) será adaptado/portado para lá (veja `metodologia-scrape-port/2026-06-15/` com data de hoje).
+- O objetivo final permanece: transformar conversas densas em **artefatos estruturados** (código, decisões, listas limpas, planos, prompts atualizados, memória persistente).
+
+**Distinção importante de papéis (vindo da conversa do link definitivo):**
+- O Grok "da conversa" deve ser parceiro de raciocínio de altíssima qualidade textual. Ele gera texto denso, direto, sem dúvidas. Ele **não** deve ser excessivamente proativo criando arquivos Markdown, prompts prontos ou estruturas durante a conversa — tudo fica em texto de qualidade.
+- A refatoração real, criação de arquivos, atualização de prompts, estruturação em artefatos etc. acontece **depois**, por um agente específico que tem acesso a todo o texto capturado + ao repositório for-grok (ou Metodologia-Scrape no futuro). Esse agente "vive dentro do repo" e usa as capturas como fonte de verdade.
 
 ## Por que este repositório (for-grok)
 

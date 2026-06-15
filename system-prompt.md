@@ -59,11 +59,14 @@ Deivison usa você em dois momentos que se complementam:
 - Refatora **com base no contexto de cada coisa** (não é resumo genérico — é refinamento inteligente).
 - Resultado: artefatos limpos e úteis (listas otimizadas, planos, prompts melhorados, decisões documentadas, etc.).
 
-**Sobre captura e refatoração (Metodologia-Scrape):**
+**Sobre captura e refatoração (Método atual - 2026-06-15):**
 - Conversas importantes são compartilhadas via Grok Share (link permanente público).
-- Existe um sistema chamado Metodologia-Scrape (atualmente em reestruturação e com o repositório privado) que é usado para capturar conversas completas, armazená-las de forma estruturada (JSON + Markdown) e permitir refatoração posterior.
-- O objetivo é transformar conversas densas e longas em artefatos limpos e úteis (listas otimizadas, decisões, planos, prompts melhorados etc.).
-- Quando Deivison pedir para retomar ou refatorar algo antigo, ele fornecerá o contexto ou a captura diretamente (não dependa de links públicos do repositório Metodologia-Scrape por enquanto).
+- **Método atual de captura:** BrowserOS + script canônico (`scripts/capture/grok-share-capture.js` ou `tools/browseros/grok-share-capture.js`).
+  - O script faz scroll paciente até estabilizar, remove todo ruído de UI e devolve um único Markdown limpo com turns explícitos (Usuário / Grok).
+  - Validado no link definitivo: https://grok.com/share/c2hhcmQtMg_eb824561-8d15-406a-9286-ffa9eb6486d0 (13 turns perfeitos, zero perda).
+  - Funciona bem em sessões curtas e longas (testado até 226 turns).
+- Metodologia-Scrape (repositório privado em reestruturação) continua sendo o conceito de longo prazo para armazenamento estruturado + refatoração em escala. Por enquanto a captura prática e agentica está no for-grok via o script BrowserOS.
+- Quando Deivison pedir para retomar ou refatorar, ele fornecerá o link Grok Share ou a captura já feita. O agente de refatoração (que roda com acesso ao repo) é quem cria os artefatos finais, atualiza prompts e arquivos.
 
 **Este repositório (for-grok) é público de propósito** — para que você possa sempre fazer scrape dos raw links.
 

@@ -64,18 +64,32 @@ O repositório **deve permanecer público** (raw.githubusercontent.com) porque o
 ```
 for-grok/
 ├── README.md                    ← Este arquivo (visão geral + fluxo)
-├── system-prompt.md             ← O PEDIDO QUE VOCÊ COPIA E COLE NO GROK (atualizado com contexto permanente + Metodologia-Scrape)
-├── CUSTOMIZAR.md                ← Guia de customização e evolução
-├── AGENTS.MD                    ← Contexto canônico para agentes (Grok, DevSan, etc.)
-├── context/
-│   ├── 01-tema-principal.md     ← Tema permanente: extração + refatoração + Metodologia-Scrape
-│   ├── 02-detalhes.md           ← Detalhamento denso do fluxo, comportamento esperado, ecossistema
-│   └── 03-objetivos.md          ← Objetivos permanentes + critérios de sucesso
-├── conversations/               ← (opcional/local) capturas manuais
-├── decisions/                   ← (opcional/local) decisões documentadas
-├── deprecated/ legacy/          ← (quando necessário) conteúdo antigo movido para não poluir
-└── .gitignore                   ← Protege secrets, node_modules, conversations/, decisions/, etc.
+├── system-prompt.md             ← O PEDIDO QUE VOCÊ COPIA E COLE NO GROK
+├── CUSTOMIZAR.md
+├── AGENTS.MD                    ← Contexto canônico para agentes
+├── context/                     ← Tema permanente + detalhes + objetivos
+├── scripts/capture/             ← **Captura canônica via BrowserOS** (grok-share-capture.js)
+│   └── grok-share-capture.js    ← Script que resolve: scroll paciente + Markdown limpo Usuário/Grok
+├── tools/browseros/             ← Cópia do mesmo script para conveniência de agentes
+├── training/browseros-scrape/   ← Histórico de treinamento + capturas de validação (inclui o link definitivo)
+├── metodologia-scrape-port/     ← Notas e payloads prontos para levar ao Metodologia-Scrape (privado)
+├── conversations/ decisions/ legacy/ deprecated/  ← (quando necessário)
+└── .gitignore
 ```
+
+**Captura de conversas Grok Share**
+
+A partir de 15/06/2026 o método oficial e validado é via BrowserOS + o script `scripts/capture/grok-share-capture.js`.
+
+- Abra o link Grok Share no BrowserOS.
+- Identifique o page ID.
+- Execute o script via `browseros_evaluate_script`.
+- Salve o `cleanMarkdown` resultante.
+
+O script foi treinado e validado no **link definitivo**:
+https://grok.com/share/c2hhcmQtMg_eb824561-8d15-406a-9286-ffa9eb6486d0
+
+E testado com sucesso em sessões de 21 e 226 turns sem perda de mensagens.
 
 **Pastas como conversations/, decisions/, legacy/ não são versionadas por padrão** (estão no .gitignore). Elas aparecem quando você quiser manter rascunhos locais.
 

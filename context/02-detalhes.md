@@ -30,17 +30,24 @@ Exemplo clássico de uso:
 > Conversa de 60 minutos sobre lista de compras: percorre mentalmente supermercados, compara preços, marcas, promoções, qualidade, logística, preferências pessoais, restrições de tempo/dinheiro.
 > Depois: "Agora refatora isso. Quero só a lista final limpa, com justificativas curtas por item, agrupada por categoria, sem o que eu falei, sem horários, sem o processo de decisão — só o resultado refinado."
 
-## Sobre captura e memória de conversas (Metodologia-Scrape)
+## Sobre captura e memória de conversas (Método atual - 2026-06-15)
 
-Existe um sistema chamado **Metodologia-Scrape** (repositório atualmente privado e em reestruturação) que serve para:
+**Método de captura validado e fixado:**
+- Usa **BrowserOS** (ferramentas conectadas) + o script canônico `scripts/capture/grok-share-capture.js`.
+- O script é paciente: faz scroll repetido até o conteúdo estabilizar (detecta quando não cresce mais), remove agressivamente ruído de UI (Copiar, Report, sources, botões, etc.), detecta speaker (Usuário vs Grok) com heurísticas genéricas + correção de alternância, e monta direto o Markdown limpo no formato exato exigido.
+- Validado no link definitivo (15/06/2026): https://grok.com/share/c2hhcmQtMg_eb824561-8d15-406a-9286-ffa9eb6486d0 → 13 turns perfeitos, sem perda, início e fim confirmados.
+- Funciona em sessões curtas e longas (testado até 226 turns em conversa real de múltiplas horas).
 
-- Capturar conversas completas e densas feitas no Grok via links de compartilhamento permanentes (Grok Share).
-- Armazenar o conteúdo de forma estruturada (JSON + Markdown limpo).
-- Permitir refatoração posterior: transformar conversas longas e cheias de ruído em artefatos úteis (listas otimizadas, decisões, planos, prompts refinados, etc.).
+**Metodologia-Scrape** (repositório privado em reestruturação):
+- Continua sendo o conceito e o repositório-alvo de longo prazo para armazenamento estruturado + refatoração em escala.
+- O script e a metodologia completa foram registrados em `metodologia-scrape-port/2026-06-15/` (com data de hoje) para futura adaptação. Quando o Metodologia-Scrape estiver pronto, o payload de captura via BrowserOS será levado para lá.
 
-O objetivo principal da Metodologia-Scrape é exatamente o que Deivison descreve: capturar **tudo o que foi falado** durante sessões ricas de raciocínio e depois refatorar para obter versões limpas e utilizáveis.
+**Distinção clara de papéis (extraído da conversa do link definitivo):**
+- Durante a conversa: o Grok deve entregar **texto de excelentíssima qualidade**, denso, direto, sem deixar dúvidas. Ele deve **parar de ser tão proativo** (não criar Markdowns prontos, não gerar prompts estruturados, não "fazer a mão na massa" criando arquivos). Tudo fica em texto puro de alta qualidade.
+- A captura (via o script BrowserOS) registra tudo do início ao fim sem perda.
+- A refatoração pesada, criação de arquivos, atualização de prompts, estruturação em artefatos etc. acontece **depois**, por um agente que tem acesso completo ao texto capturado + ao repositório (for-grok hoje, Metodologia-Scrape no futuro). Esse agente "vive dentro do repo" e usa as capturas como fonte de verdade.
 
-Por enquanto o repositório está privado. Quando Deivison precisar usar capturas antigas ou o sistema de captura, ele fornecerá o contexto diretamente ou indicará como acessar. Não dependa de links públicos ou raw do repositório Metodologia-Scrape neste momento.
+Isso é intencional: o parceiro de raciocínio na hora da conversa foca em qualidade textual pura; o poder agentico de estruturação e evolução fica na camada de captura + repo.
 
 ## Comportamento Esperado do Grok (Este Contexto)
 
@@ -85,12 +92,17 @@ Toda vez que Deivison colar o system-prompt e iniciar conversa:
 - **Pensamento estratégico:** Considere implicações de longo prazo das decisões que estão sendo tomadas na conversa.
 - **Manutenção de prompts:** Quando a conversa revelar melhorias no modo de usar o Grok, ajude a incorporar nos arquivos de contexto e no system-prompt.
 
-## Capturas e Memória
+## Capturas e Memória (atualizado 2026-06-15)
 
 - Conversas importantes viram links Grok Share permanentes.
-- Metodologia-Scrape captura e armazena em /captures/ (JSON + MD).
-- Essas capturas são a "memória externa" que permite refatoração posterior e continuidade entre sessões.
-- O Grok deve tratar capturas como fonte de verdade quando Deivison pedir para retomar ou refatorar algo antigo.
+- Captura atual: BrowserOS + `scripts/capture/grok-share-capture.js` (ou tools/browseros/). Gera um único Markdown limpo com turns Usuário/Grok. O script está versionado no repo e é o que "resolve" hoje.
+- Essas capturas (salvas em training/browseros-scrape/ ou em pastas de decisões/conversas) são a "memória externa" que permite refatoração posterior e continuidade entre sessões.
+- O agente de refatoração (que roda com ferramentas do repo) trata as capturas como fonte de verdade. Ele é quem faz a limpeza cirúrgica, cria artefatos, atualiza prompts e evolui o sistema.
+- O Grok "da conversa" não precisa saber como capturar — ele só precisa gerar texto excelente. O poder de captura e refatoração está na camada agentica + repo.
+
+**Link definitivo de validação (gold standard):**  
+https://grok.com/share/c2hhcmQtMg_eb824561-8d15-406a-9286-ffa9eb6486d0  
+Testado em 15/06/2026. 13 turns perfeitos. Usado como referência para todas as melhorias no script e na metodologia.
 
 ---
 
